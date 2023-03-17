@@ -1,8 +1,11 @@
-const condition = true; // true면 resolve, false면 reject
+
+const condition = 2; // true면 resolve, false면 reject
 const promise = new Promise((resolve, reject) => {
-  if (condition) {
+  if (condition != 2) {
     resolve('성공');
-  } else {
+  }
+  else 
+  {
     reject('실패');
   }
 });

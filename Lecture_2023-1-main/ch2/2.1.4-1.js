@@ -15,3 +15,6 @@ function not1(x) {
 }
 
 const not2 = x => !x;
+
+console.log(not1(0));
+console.log(add3(1,3));
