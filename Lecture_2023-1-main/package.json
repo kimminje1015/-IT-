@@ -1,0 +1,11 @@
+{
+  "name": "lecture_2023-1-main",
+  "version": "1.0.0",
+  "description": "2023년 1학기 강의 실습 예제 등",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
