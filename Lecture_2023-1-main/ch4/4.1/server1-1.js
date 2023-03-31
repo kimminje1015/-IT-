@@ -8,7 +8,7 @@ const server = http.createServer((req, res) => {
 server.listen(8080);
 
 server.on('listening', () => {
-  console.log('8080ë²ˆ í¬íŠ¸ì—ì„œ ì„œë²„ ëŒ€ê¸° ì¤‘ìž…ë‹ˆë‹¤!');
+  console.log('8080¹ø Æ÷Æ®¿¡¼­ ¼­¹ö ´ë±â ÁßÀÔ´Ï´Ù!');
 });
 server.on('error', (error) => {
   console.error(error);
