@@ -1,5 +1,5 @@
 const a = false;
 if (a) {
-    require('./func');
+    const b = require('./func');
 }
 console.log('성공');

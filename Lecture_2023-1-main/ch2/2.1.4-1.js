@@ -13,8 +13,7 @@ const add4 = (x, y) => (x + y);
 function not1(x) {
   return !x;
 }
+var a = 2;
+console.log(not1(a));
 
 const not2 = x => !x;
-
-console.log(not1(0));
-console.log(add3(1,3));

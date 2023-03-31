@@ -5,10 +5,9 @@ const candyMachine = {
   },
   getCandy() {
     this.status.count--;
-    return this.status.count , this.status.name;
+    return this.status.count;
   },
 };
-const { getCandy, status: { count,name } } = candyMachine;
-
+const { getCandy, status: { count } } = candyMachine;
 console.log(getCandy);
-console.log(count,name);
+console.log(count);
