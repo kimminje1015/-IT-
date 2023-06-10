@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Real-time Stock Price</title>
+  <!-- 스타일 -->
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+  </style>
+
+</head>
+<body>
+  <table id="stockTable">
+    <thead>
+      <tr>
+        <th>업체</th>
+        <th>가격</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <!-- JS -->
+  <script>
+    //포트 연결
+    const socket = new WebSocket('ws://localhost:3333');
+    const stockTable = document.getElementById('stockTable').getElementsByTagName('tbody')[0];
+
+    socket.onmessage = (event) => {
+      const stock = JSON.parse(event.data);
+      updateStockTable(stock);
+    };
+
+    function updateStockTable(stock) {
+      const existingRow = stockTable.querySelector(`tr[data-symbol="${stock.symbol}"]`);
+
+      if (existingRow) {
+        existingRow.cells[1].innerText = `$${stock.price}`;
+      } else {
+        const newRow = document.createElement('tr');
+        newRow.setAttribute('data-symbol', stock.symbol);
+        newRow.innerHTML = `<td>${stock.symbol}</td><td>$${stock.price}</td>`;
+        stockTable.appendChild(newRow);
+      }
+    }
+  </script>
+</body>
+</html>
